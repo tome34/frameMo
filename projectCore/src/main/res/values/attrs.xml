@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- EmptyView start -->
+    <declare-styleable name="AttrsEmptyView">
+        <attr name="Empty_show_loading" format="boolean"/>
+        <attr name="Empty_image_view" format="integer"/>
+        <attr name="Empty_title_text" format="string"/>
+        <attr name="Empty_detail_text" format="string"/>
+        <attr name="Empty_btn_text" format="string"/>
+    </declare-styleable>
+    <!-- EmptyView end -->
+
+    <!--Loading-->
+    <declare-styleable name="UILoadingStyle">
+        <attr name="LoadingStyle" format="reference"/>
+    </declare-styleable>
+
+    <!--************ QMUILoading ***********-->
+    <declare-styleable name="LoadingView">
+        <attr name="loading_view_size" format="dimension"/>
+        <attr name="loading_view_color"  format="color"/>
+    </declare-styleable>
+
+</resources>

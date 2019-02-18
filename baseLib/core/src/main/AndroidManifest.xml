@@ -1,0 +1,26 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fec.yunmall.core">
+
+    <!--允许应用程序从外部存储读取。-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--网络请求权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--wifi-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--允许应用程序安装软件包-->
+    <permission android:name="android.permission.INSTALL_PACKAGES" />
+
+
+    <!--调整系统亮度 6.0危险权限-->
+    <!--<uses-permission android:name="android.permission.WRITE_SETTINGS"/>-->
+    <!--网络请求权限-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--允许应用程序读取或写入系统设置-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--相机权限-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+
+</manifest>

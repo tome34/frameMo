@@ -1,0 +1,30 @@
+apply from: "${rootProject.rootDir}/config.gradle"
+apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release'//添加
+
+android {
+
+    project.ext.setDefaultConfig project
+    defaultConfig {
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //解除 android P 反射限制
+    api 'me.weishu:free_reflection:1.2.0'
+}
+

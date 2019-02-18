@@ -1,0 +1,21 @@
+/*全局配置信息及第三方依赖统一管理*/
+project.ext {
+    //统一设置APP配置
+    setDefaultConfig = { extension ->
+        //相对于APP中的build.gradle android {}的内容
+        extension.android{
+            compileSdkVersion rootProject.compileSdkVersion
+            buildToolsVersion rootProject.buildToolsVersion
+            defaultConfig {
+                minSdkVersion rootProject.minSdkVersion
+                targetSdkVersion rootProject.targetSdkVersion
+                versionCode rootProject.versionCode
+                versionName rootProject.versionName
+
+                testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rg_tab_container1"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/rb_home"
+        style="@style/mall_HomeTabStyle"
+        android:drawableTop="@drawable/mall_home_tab_home"
+        android:text="@string/mall_home_page"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/mall_home_tab_color" />
+
+
+    <RadioButton
+        android:id="@+id/rb_order"
+        style="@style/mall_HomeTabStyle"
+        android:drawableTop="@drawable/mall_home_tab_goods"
+        android:text="@string/mall_home_order"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/mall_home_tab_color" />
+
+    <RadioButton
+        android:id="@+id/rb_cart"
+        style="@style/mall_HomeTabStyle"
+        android:drawableTop="@drawable/mall_home_tab_cart"
+        android:text="@string/mall_home_cart"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/mall_home_tab_color" />
+
+    <RadioButton
+        android:id="@+id/rb_self"
+        style="@style/mall_HomeTabStyle"
+        android:drawableTop="@drawable/mall_home_tab_self"
+        android:text="@string/mall_home_self"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/mall_home_tab_color" />
+
+</RadioGroup>

@@ -1,0 +1,86 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    //使用这种统一的依赖定义,ide会主动提示版本升级,如果放在config.gradle ide就不会主动提示版本升级
+    // ext.kotlin_version = '1.2.41'
+    ext.kotlin_version = '1.2.71'
+    //数据库版本
+    ext.objectboxVersion = '2.1.0'
+    ext {
+        //是否单独运行
+        isRunAlone = false
+        //首页模块
+        moduleMall = false
+        //购物车模块
+        moduleCart = false
+        //订单模块
+        moduleOrder = false
+        //个人中心模块
+        moduleUserCenter = false
+
+        ext.compileSdkVersion = 28
+        ext.buildToolsVersion = '28.0.3'
+        ext.minSdkVersion = 17
+        ext.targetSdkVersion = 23
+        ext.versionCode = 1
+        ext.versionName = "1.0.0"
+        ext.applicationId = "com.fec.yunmall.hhllmo"
+        ext.androidSupportSdkVersion = '28.0.0'
+        ext.constraintLayout = '1.1.3'
+        ext.annotations = '24.0.0'
+        ext.junit = '4.12'
+        ext.testRunner = '1.0.2'
+        ext.testEspressoCore = '3.0.2'
+
+        ext.multidex = '1.0.2'
+        ext.arouterApiVersion = '1.2.4'
+        ext.arouterCompilerVersion = '1.1.4'
+        ext.butterknifeVersion = '8.4.0'
+        ext.glideVersion = '4.5.0'
+        ext.retrofitVersion = '2.3.0'
+    }
+
+
+    // 仓库
+    repositories {
+        //mavenLocal()
+        google()
+        jcenter() //{url"http://jcenter.bintray.com"}
+        mavenCentral()
+        maven { url "https://clojars.org/repo/" } //icepick配置
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.0'
+        //        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-rc2'  //註解
+       // classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'  //註解
+        classpath 'me.tatarka:gradle-retrolambda:3.7.0' //lambda配置
+        //插件
+        classpath 'com.novoda:bintray-release:0.8.0'
+        //GreenDao3 add plugin
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+        //kotlin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        //数据库
+       // classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+// 所有项目都依赖于已下中央仓库
+allprojects {
+    repositories {
+        // mavenLocal()
+        google()
+        jcenter() //{ url"http://jcenter.bintray.com" }
+        mavenCentral()
+        maven { url "https://clojars.org/repo/" } //icepick配置
+        maven { url "https://jitpack.io" }
+    }
+}
+
+// gradle在执行构建任务时的清理配置
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

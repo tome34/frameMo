@@ -1,0 +1,118 @@
+apply from: "${rootProject.rootDir}/config.gradle"
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'me.tatarka.retrolambda'
+
+
+android {
+    //调动config.gradle配置
+    project.ext.setDefaultConfig project
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        signingConfigs {
+            //签名配置
+//            release {
+//                keyAlias key_Alias
+//                keyPassword key_Password
+//                storeFile file('../frameKey.jks')
+//                storePassword store_Password
+//                v1SigningEnabled true
+//                v2SigningEnabled true
+//            }
+        }
+
+        //MultiDex分包方法
+        multiDexEnabled true
+
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        //目录指向配置
+        sourceSets {
+            //设置依赖so库路径
+            main.jniLibs.srcDirs = ['libs']
+        }
+
+        ndk {
+            // 设置支持的SO库架构(cpu)
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        debug {
+            //是否进行混淆
+            minifyEnabled false
+            // 混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //配置签名文件
+           // signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled false
+            //是否清理无用资源,依赖于minifyEnabled
+            shrinkResources false
+            //是否启用zipAlign压缩
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //配置签名文件
+           // signingConfig signingConfigs.release
+            //配置apk路径
+            //            applicationVariants.all { variant ->
+            //                def buildType = variant.buildType.name
+            //                if (buildType == 'release') {
+            //                    variant.getPackageApplication().outputDirectory = new File(rootProject.rootDir, "release")
+            //                    // variant.getPackageApplication().outputDirectory = new File("F:/apk/frameDemoApk","releaseApk")
+            //
+            //                    variant.outputs.each { output ->
+            //                        def outputFile = output.outputFile
+            //                        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+            //                            // 输出apk名称为XXX20160328_v1.0.0_vc10_XXXX_test.apk
+            //                            def fileName = "frame_${releaseTime()}_v${rootProject.ext.versionName}.apk"
+            //                            //  output.outputFile 改为 outputFileName
+            //                            output.apkData.outputFileName = fileName
+            //                        }
+            //                    }
+            //                }
+            //            }
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+// 定义一个打包时间
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation "junit:junit:$rootProject.junit"
+    androidTestImplementation "com.android.support.test:runner:$rootProject.testRunner"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.testEspressoCore"
+
+    implementation project(':projectCore')
+    //是否模块独立运行
+    if (!rootProject.ext.isRunAlone) {
+        implementation project(':business:mall')
+        implementation project(':business:cart')
+        implementation project(':business:order')
+        implementation project(':business:userCenter')
+    }
+
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

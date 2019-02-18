@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/otherLib/alertview/alertview.iml" filepath="$PROJECT_DIR$/otherLib/alertview/alertview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseLib/baseLib.iml" filepath="$PROJECT_DIR$/baseLib/baseLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/business.iml" filepath="$PROJECT_DIR$/business/business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/cart/cart.iml" filepath="$PROJECT_DIR$/business/cart/cart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/otherLib/cockroach-x/cockroach-x.iml" filepath="$PROJECT_DIR$/otherLib/cockroach-x/cockroach-x.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseLib/core/core.iml" filepath="$PROJECT_DIR$/baseLib/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frameDemoMo.iml" filepath="$PROJECT_DIR$/frameDemoMo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/otherLib/kprogresshud/kprogresshud.iml" filepath="$PROJECT_DIR$/otherLib/kprogresshud/kprogresshud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/mall/mall.iml" filepath="$PROJECT_DIR$/business/mall/mall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/order/order.iml" filepath="$PROJECT_DIR$/business/order/order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/otherLib/otherLib.iml" filepath="$PROJECT_DIR$/otherLib/otherLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/projectCore/projectCore.iml" filepath="$PROJECT_DIR$/projectCore/projectCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseLib/router/router.iml" filepath="$PROJECT_DIR$/baseLib/router/router.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/userCenter/userCenter.iml" filepath="$PROJECT_DIR$/business/userCenter/userCenter.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,65 @@
+apply from: "${rootProject.rootDir}/config.gradle"
+if (Boolean.valueOf(rootProject.ext.moduleUserCenter)) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+    apply plugin: 'me.tatarka.retrolambda' //lambda配置
+}
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    project.ext.setDefaultConfig project
+
+    defaultConfig {
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+        //强制前缀
+        resourcePrefix "user_"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /*java插件引入了一个概念叫做SourceSets，通过修改SourceSets中的属性，可以指定哪些源文件
+    （或文件夹下的源文件）要被编译，哪些源文件要被排除。*/
+    sourceSets {
+        main {
+            if (rootProject.ext.moduleUserCenter) {
+                manifest.srcFile 'src/main/aloneManifest/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/debug文件夹下的所有文件
+                    exclude '*module'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayout"
+    //Arouter路由
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
+    //黄油刀
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+
+    //公用依赖包
+    implementation project(':projectCore')
+}

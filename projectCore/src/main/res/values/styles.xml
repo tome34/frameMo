@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.beginBackground" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+
+    <style name="myNoActionBar" parent="Base.Theme.AppCompat.Light">
+        <!-- 使用 API Level 22以上编译的话，要拿掉前綴字 -->
+        <item name="windowNoTitle">true</item>
+        <!--将ActionBar隐藏,这里使用ToolBar-->
+        <item name="windowActionBar">false</item>
+        <!--解决启动白屏问题-->
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="myNoActionBar">
+        <!-- Customize your theme here. -->
+        <!--主色调-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--暗的主色调-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--着重色-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--主字体颜色-->
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <!--主字体关闭时的颜色,比如不可点击-->
+        <item name="android:textColorPrimaryDisableOnly">@color/disableTextColor_cta</item>
+        <!--可点击的连接类型的字体颜色-->
+        <item name="android:textColorHint">@color/disableTextColor_cta</item>
+        <!--次要字体颜色-->
+        <item name="android:textColorSecondary">@color/secondary_text_cta</item>
+        <!--背景色-->
+        <item name="android:windowBackground">@color/icons_cta</item>
+        <!--分割线-->
+
+    </style>
+
+    <!--水平线-->
+    <style name="HorizontalLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/colorDD</item>
+    </style>
+    <!--垂直线-->
+    <style name="VerticalLineStyle">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorDD</item>
+    </style>
+
+    <!--状态栏占位-->
+    <style name="hold_space_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+</resources>

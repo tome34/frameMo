@@ -1,0 +1,11 @@
+<resources>
+    <string name="mall_app_name">首页模板</string>
+
+    <string name="mall_home_page">首页</string>
+    <string name="mall_home_order">订单</string>
+    <string name="mall_home_cart">购物车</string>
+    <string name="mall_home_self">我的</string>
+
+    <string name="mall_exit">再按一次退出程序</string>
+
+</resources>

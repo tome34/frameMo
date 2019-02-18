@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mall="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="25dp"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="个人中心"
+        />
+
+    <com.fec.yunmall.userCenter.widget.MyMaterialItemView
+        android:id="@+id/view_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        mall:user_materialContent="1234567899"
+        mall:user_materialTitle="用户名/手机"
+        mall:user_materialToggle="true"
+        />
+
+    <com.fec.yunmall.userCenter.widget.MyMaterialItemView
+        android:id="@+id/view_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        mall:user_materialContent="李四"
+        mall:user_materialTitle="姓名"
+        mall:user_materialToggle="false"
+        />
+
+</LinearLayout>

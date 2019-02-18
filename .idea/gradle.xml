@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/baseLib" />
+            <option value="$PROJECT_DIR$/baseLib/core" />
+            <option value="$PROJECT_DIR$/baseLib/router" />
+            <option value="$PROJECT_DIR$/business" />
+            <option value="$PROJECT_DIR$/business/cart" />
+            <option value="$PROJECT_DIR$/business/mall" />
+            <option value="$PROJECT_DIR$/business/order" />
+            <option value="$PROJECT_DIR$/business/userCenter" />
+            <option value="$PROJECT_DIR$/otherLib" />
+            <option value="$PROJECT_DIR$/otherLib/alertview" />
+            <option value="$PROJECT_DIR$/otherLib/cockroach-x" />
+            <option value="$PROJECT_DIR$/otherLib/kprogresshud" />
+            <option value="$PROJECT_DIR$/projectCore" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

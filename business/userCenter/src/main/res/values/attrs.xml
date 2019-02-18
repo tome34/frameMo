@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--我的资料自定义item-->
+    <declare-styleable name="user_MyMaterialItem">
+        <attr name="user_materialTitle" format="string"/>
+        <attr name="user_materialContent" format="string" />
+        <!--指定是否有图标>-->
+        <attr name="user_materialToggle" format="boolean"/>
+    </declare-styleable>
+</resources>
